@@ -1,36 +1,36 @@
-# incluir  " ordenar.h "
+#include "sort.h"
  
-/* *
-* bubble_sort - ordena una matriz de enteros en orden ascendente usando el
-* Algoritmo de clasificación de burbujas
-* @array: La matriz a ordenar
-* @size: El tamaño de la matriz
-*
-* Retorno: nulo
+/**
+ * bubble_sort - sorts an array of integers in ascending order using the
+ * Bubble sort algorithm
+ * @array: The array to be sorted
+ * @size: The size of the array
+ *
+ * Return: void
  */
-void  bubble_sort ( int *array, size_t tamaño)
+void bubble_sort(int *array, size_t size)
 {
- tamaño_t i, n, nuevo_n;
- intercambio int ;
+ size_t i, n, new_n;
+ int swap;
  
- si (matriz == NULL || tamaño < 2 )
- volver ;
+ if (array == NULL || size < 2)
+ return;
  
-n = tamaño;
- mientras que (n > 0 )
-{
-nuevo_n = 0 ;
- para (i = 0 ; i < n - 1 ; i++)
-{
- si (matriz[i] > matriz[i + 1 ])
-{
-intercambio = matriz[i];
-arreglo[i] = arreglo[i + 1 ];
-matriz[i + 1 ] = intercambio;
-nuevo_n = i + 1 ;
- print_array (matriz, tamaño);
-}
-}
-n = nuevo_n;
-}
+ n = size;
+ while (n > 0)
+ {
+ new_n = 0;
+ for (i = 0; i < n - 1; i++)
+ {
+ if (array[i] > array[i + 1])
+ {
+ swap = array[i];
+ array[i] = array[i + 1];
+ array[i + 1] = swap;
+ new_n = i + 1;
+ print_array(array, size);
+ }
+ }
+ n = new_n;
+ }
 }
