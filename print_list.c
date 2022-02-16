@@ -19,3 +19,4 @@ printf("%d", list->n);
 list = list->next;
 }
 printf("\n");
+}
